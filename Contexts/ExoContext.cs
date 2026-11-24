@@ -19,14 +19,11 @@ namespace Exo.WebApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Essa string de conexao depende da SUA maquina.
-                // Exemplo padrao com Autenticacao do Windows:
                 optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ExoApi;Trusted_Connection=True;TrustServerCertificate=True;");
-                // Exemplo com autenticacao SQL (sa):
-                // optionsBuilder.UseSqlServer("User ID=sa;Password=admin;Server=localhost;Database=ExoApi;Trusted_Connection=False;TrustServerCertificate=True;");
             }
         }
 
         public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
